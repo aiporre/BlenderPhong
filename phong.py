@@ -32,25 +32,25 @@ def main():
     model = argv[0]
     image_dir = argv[1]
 
-    install_off_addon()
+    # install_off_addon()
     init_camera()
     fix_camera_to_origin()
     do_model(model, image_dir)
 
-
-def install_off_addon():
-    try:
-        bpy.ops.preferences.addon_install(
-            overwrite=False,
-            filepath=os.path.join(os.path.dirname(__file__), 'blender-off-addon', 'import_off.py')
-        )
-        bpy.ops.preferences.addon_enable(module='import_off')
-    except Exception:
-        print("""Import blender-off-addon failed.
-              Did you pull the blender-off-addon submodule?
-              $ git submodule update --recursive --remote
-              """)
-        exit(-1)
+#
+# def install_off_addon():
+#     try:
+#         bpy.ops.preferences.addon_install(
+#             overwrite=False,
+#             filepath=os.path.join(os.path.dirname(__file__), 'blender-off-addon', 'import_off.py')
+#         )
+#         bpy.ops.preferences.addon_enable(module='import_off')
+#     except Exception:
+#         print("""Import blender-off-addon failed.
+#               Did you pull the blender-off-addon submodule?
+#               $ git submodule update --recursive --remote
+#               """)
+#         exit(-1)
 
 
 def init_camera():
