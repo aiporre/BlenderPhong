@@ -15,7 +15,12 @@ def process_obj(file_path, dest_dir):
         file_path,
         dest_dir
     ]
-    return subprocess.run(cmd, check=True)
+    dir_created = os.path.join(dest_dir, os.path.basename(file_path).replace(".obj", ""))
+    if os.path.exists(dir_created):
+        print('skipping existing dir', dir_created)
+        return 0
+    else:
+        return subprocess.run(cmd, check=True)
 
 def main(src_dir, dest_dir, max_workers=None):
     os.makedirs(dest_dir, exist_ok=True)

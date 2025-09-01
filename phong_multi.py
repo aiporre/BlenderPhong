@@ -16,7 +16,7 @@ def main():
     image_dir = argv[1]
 
     # blender has no native support for off files
-    install_off_addon()
+    # install_off_addon()
 
     init_camera()
     fix_camera_to_origin()
