@@ -36,7 +36,7 @@ def main(src_dir, dest_dir, max_workers=None):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python batch_blender.py <SRC_DIR> <DEST_DIR> [MAX_WORKERS]")
+        print("Usage: mv_hipp_run.py <SRC_DIR> <DEST_DIR> [MAX_WORKERS]")
         sys.exit(1)
     src_dir = sys.argv[1]
     dest_dir = sys.argv[2]
